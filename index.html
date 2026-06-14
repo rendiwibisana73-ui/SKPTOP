@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPK Bansos - TOPSIS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SPK Bansos - Metode TOPSIS</h1>
+        
+        <div class="form-section">
+            <h2>Tambah Alternatif (Kandidat)</h2>
+            <input type="text" id="name" placeholder="Nama Calon Penerima" required>
+            <input type="number" id="c1" placeholder="C1 (Cost): Penghasilan" required>
+            <input type="number" id="c2" placeholder="C2 (Benefit): Jumlah Tanggungan Anak" required>
+            <input type="number" id="c3" min="1" max="5" placeholder="C3 (Benefit): Kondisi Rumah (Skala 1-5)" required>
+            <input type="number" id="c4" placeholder="C4 (Benefit): Usia Kepala Keluarga" required>
+            <button onclick="addAlternative()">Tambah Kandidat</button>
+        </div>
+
+        <div class="table-section">
+            <h2>Data Kandidat</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>C1 (Cost)</th>
+                        <th>C2 (Benefit)</th>
+                        <th>C3 (Benefit)</th>
+                        <th>C4 (Benefit)</th>
+                    </tr>
+                </thead>
+                <tbody id="dataBody">
+                    </tbody>
+            </table>
+        </div>
+
+        <button class="calc-btn" onclick="calculateTOPSIS()">Hitung Ranking TOPSIS</button>
+
+        <div class="result-section">
+            <h2>Hasil Perangkingan</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Peringkat</th>
+                        <th>Nama</th>
+                        <th>Nilai Preferensi (V)</th>
+                    </tr>
+                </thead>
+                <tbody id="resultBody">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
